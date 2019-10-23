@@ -68,7 +68,7 @@ stages:
         deploy:
           steps:            
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: fhwn19-node-Lab2prod'
+            displayName: 'Azure Web App Deploy: fhwn19-node-app-09'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
