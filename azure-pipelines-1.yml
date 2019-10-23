@@ -12,10 +12,10 @@ variables:
   azureSubscription: '63b93685-f3b8-4a76-8355-65d598dca24e'
   
   # Web app name
-  webAppName: 'fhwn19-node-app-09'
+  webAppName: 'fhwn19-node-app-09-prod'
   
   # Environment name
-  environmentName: 'fhwn19-node-app-09'
+  environmentName: 'fhwn19-node-app-09-prod'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -68,7 +68,7 @@ stages:
         deploy:
           steps:            
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: fhwn19-node-app-09'
+            displayName: 'Azure Web App Deploy: fhwn19-node-app-09-prod'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
