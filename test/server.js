@@ -2,7 +2,7 @@ var expect  = require("chai").expect;
 var request = require("request");
 var http = require('http');
 var app = require('../app');
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '80');
 app.set('port',port);
 var server = http.createServer();
 
