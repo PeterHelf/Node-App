@@ -15,9 +15,11 @@ stages:
 - stage: Build
   displayName: Build image
   jobs:  
-  - job: Build    variables:
+  - job: Build    
+    variables:
     - name: Tag
       value: $(Build.BuildId)
+      
     displayName: Build
     pool:
       vmImage: 'ubuntu-latest'
