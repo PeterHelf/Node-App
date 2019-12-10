@@ -27,7 +27,9 @@ stages:
           repository: 'kaaras/node-app'
           command: 'buildAndPush'
           Dockerfile: '**/Dockerfile'
-          tags: 'latest'
+          tags: |
+            latest
+            $(Build.BuildId)
       
     - task: PublishPipelineArtifact@1
       inputs:
