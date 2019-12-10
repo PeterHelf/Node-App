@@ -32,7 +32,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: kaaras/node-app:${TAG}
+      - image: kaaras/node-app:${tag}
         imagePullPolicy: Always
         name: nodeapp
         ports:
