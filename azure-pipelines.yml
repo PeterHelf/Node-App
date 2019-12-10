@@ -8,24 +8,21 @@ trigger:
 resources:
 - repo: self
 
-variables:
-  tag: '$(Build.BuildId)'
-
 stages:
 - stage: Build
   displayName: Build image
   jobs:  
   - job: Build    
     variables:
-    - name: Tag
-      value: $(Build.BuildId)
-      
+    - name: TAG
+      value: $(Build.BuildId)      
     displayName: Build
+
     pool:
       vmImage: 'ubuntu-latest'
     steps:      
     - script: |
-        envsubst '${Tag}' < node-deployment-template.yaml > node-deployment.yaml
+        envsubst '${TAG}' < node-deployment-template.yaml > node-deployment.yaml
       displayName: Replace Environment Vriables
 
     - task: Docker@2
