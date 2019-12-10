@@ -15,13 +15,15 @@ stages:
 - stage: Build
   displayName: Build image
   jobs:  
-  - job: Build
+  - job: Build    variables:
+    - name: Tag
+      value: $(Build.BuildId)
     displayName: Build
     pool:
       vmImage: 'ubuntu-latest'
     steps:      
     - script: |
-        envsubst '${tag}' < node-deployment-template.yaml > node-deployment.yaml
+        envsubst '${Tag}' < node-deployment-template.yaml > node-deployment.yaml
       displayName: Replace Environment Vriables
 
     - task: Docker@2
