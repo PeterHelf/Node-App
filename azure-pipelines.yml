@@ -21,7 +21,7 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:      
     - script: |
-        envsubst '${tag}' < node-deployment.yml > node-deployment.yml
+        envsubst '${tag}' < node-deployment.yaml > node-deployment.yaml
       displayName: Replace Environment Vriables
 
     - task: Docker@2
