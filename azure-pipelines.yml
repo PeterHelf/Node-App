@@ -28,7 +28,7 @@ stages:
           command: 'buildAndPush'
           Dockerfile: '**/Dockerfile'
           tags: |
-            'latest'
+            latest
             $(Build.BuildId)
       
     - task: PublishPipelineArtifact@1
